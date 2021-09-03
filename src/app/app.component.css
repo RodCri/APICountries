@@ -1,5 +1,5 @@
 .app{
-    height: 100vh;
+    height: 100%;
 }
 .app.dark{
     background-color: var(--very-dark-blue-darkbackground);

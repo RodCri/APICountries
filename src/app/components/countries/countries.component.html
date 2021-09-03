@@ -1,13 +1,6 @@
-<!-- <p *ngFor="let countrie of arrCountries">
-    {{countrie.name}} -- 
-    {{countrie.population}} -- 
-    {{countrie.region}} -- 
-    {{countrie.capital}} -- 
-    {{countrie.languages[0].name}} --
-    {{countrie.subregion}}--
-    {{countrie.currencies[0].code | json}}
-    <img [src]="countrie.flag" alt="">
-</p> -->
-<p *ngFor="let co of arrCountries">
-    
-</p>
+<div>
+    <app-country-card *ngFor="let country of arrCountries$ | async"
+        [country]="country"
+    >
+    </app-country-card>
+</div>

@@ -9,6 +9,7 @@ import { CountriesComponent } from './components/countries/countries.component';
 import { DetailCountrieComponent } from './components/detail-countrie/detail-countrie.component';
 import { NotpageComponent } from './components/notpage/notpage.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { CountryCardComponent } from './components/country-card/country-card.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     CountriesComponent,
     DetailCountrieComponent,
     NotpageComponent,
-    NavbarComponent
+    NavbarComponent,
+    CountryCardComponent
   ],
   imports: [
     BrowserModule,

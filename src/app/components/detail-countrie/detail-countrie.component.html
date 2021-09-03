@@ -1,1 +1,46 @@
-<p>detail-countrie works!</p>
+<div *ngIf="country$ | async; let country">
+    <button [routerLink]="['/']">
+        <span class="fa fa-arrow-left"></span>
+        Back
+    </button>
+    <img [src]="country.flag" alt="">
+    <h3>{{country.name}}</h3>
+    <p>
+        <span>Native Name:</span>
+        {{country.nativeName}}
+    </p>
+    <p>
+        <span>Population:</span>
+        {{country.population | number:'1.0'}}
+    </p>
+    <p>
+        <span>Capital:</span>
+        {{country.capital }}
+    </p>
+    <p>
+        <span>Region:</span>
+        {{country.region }}
+    </p>
+    <p>
+        <span>Sub Region:</span>
+        {{country.subRegion }}
+    </p>
+    <p>
+        <span>Top Level Domain:</span>
+        {{country.topLevelDomain }}
+    </p>
+    <p>
+        <span>Currencies:</span>
+        {{displayCurrencies(country.currencies) }}
+    </p>
+    <p>
+        <span>Languages:</span>
+        {{displayLanguages(country.languages) }}
+    </p>
+    <div *ngIf="borderCountries$ | async; let borderCountries">
+        <p><strong>Border Countries</strong></p>
+        <div *ngFor="let borderCountry of borderCountries">
+            {{borderCountry.name}}
+        </div>
+    </div>
+</div>

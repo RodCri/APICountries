@@ -6,8 +6,8 @@ import { NotpageComponent } from './components/notpage/notpage.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', component: CountriesComponent},
-  {path: 'listCountries', component: CountriesComponent},
-  {path: 'Detail/:name', component: DetailCountrieComponent},
+  {path: 'Countries', component: CountriesComponent},
+  {path: ':country', component: DetailCountrieComponent},
   {path: '**', component: NotpageComponent}
 ];
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Countrie } from 'src/app/models/countrie.interface';
+import { Observable } from 'rxjs';
+import { Country } from '../../model/api.d';
 import { CountriesService } from 'src/app/services/countries.service';
 
 @Component({
@@ -9,16 +10,15 @@ import { CountriesService } from 'src/app/services/countries.service';
 })
 export class CountriesComponent implements OnInit {
 
-  arrCountries: Countrie[];
+  arrCountries$: Observable<Country[]>;
 
   constructor(private countrieService: CountriesService) {
-    this.arrCountries = [];
+    
    }
 
   ngOnInit(): void {
-    this.countrieService.getAllCountries()
-      .then(countries=> this.arrCountries = countries)
-      .catch(error => console.log(error));
+    this.arrCountries$ = this.countrieService.getAllCountries();
+    
   }
 
 }
