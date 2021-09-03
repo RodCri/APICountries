@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;800&display=swap');
+:root{
+    --dark-blue-elements: hsl(209, 23%, 22%);
+    --very-dark-blue-darkbackground: hsl(207, 26%, 17%);
+    --very-dark-blue-text: hsl(200, 15%, 8%);
+    --dark-gray-Input: hsl(0, 0%, 52%);
+    --very-light-gray-background: hsl(0, 0%, 98%);
+    --white-dark-elements: hsl(0, 0%, 100%);
+}
 *{
     margin: 0;
     padding: 0;
@@ -5,4 +14,9 @@
 }
 body{
     font-size: 16px;
+    font-family: 'Nunito', sans-serif;
+}
+.shadow{
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),
+    0 2px 4px -1px rgba(0,0,0,0.06);
 }

@@ -1,0 +1,26 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 2rem;
+}
+@media(min-width: 320px){
+    nav{
+        padding: 1.7rem 2rem;
+    }
+}
+h2{
+    font-size: 24px;
+}
+div{
+    font-weight: 600;
+}
+:host-context(.light) nav{
+    background-color: var(--white-dark-elements);
+}
+:host-context(.dark) nav{
+    background-color: var(--dark-blue-elements);
+}
+.toggle{
+    cursor: pointer;
+}
