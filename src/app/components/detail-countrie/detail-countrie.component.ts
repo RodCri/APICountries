@@ -20,12 +20,14 @@ export class DetailCountrieComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params=>{
       this.country$ = this.countriService
-      .getCountryByName(params.country)
-      .pipe(tap(res => console.log(res)),
-      mergeMap(res =>{
-        this.borderCountries$ = this.countriService.getCountriesByCodes(res.borders)
-        return of(res);
-      })
+      .getCountryByName(params.country).pipe(
+        tap(
+          (res) => console.log(res)
+        ),
+        mergeMap((res) =>{
+          this.borderCountries$ = this.countriService.getCountriesByCodes(res.borders);
+          return of(res);
+        })
       );
     })
   }
