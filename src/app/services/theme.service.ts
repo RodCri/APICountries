@@ -11,7 +11,7 @@ export enum Theme{
 })
 export class ThemeService {
 
-  private mode : BehaviorSubject<Theme> = new BehaviorSubject(Theme.dark);
+  private mode : BehaviorSubject<Theme> = new BehaviorSubject(Theme.light);
 
   constructor() { }
 

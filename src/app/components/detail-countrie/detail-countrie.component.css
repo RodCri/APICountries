@@ -1,0 +1,91 @@
+.country{
+    padding: 4rem 2rem;
+}
+img{
+    width: 100%;
+}
+h3{
+    padding-top: 2rem;
+}
+p{
+    padding: 0.5rem 0;
+}
+button{
+    padding: 0.5rem 2rem;
+    margin-bottom: 4rem;
+}
+.button{
+    border: none;
+    font-size: 1rem;
+}
+.btn{
+    background-color: #fff;
+    border: none;
+    -webkit-box-shadow: 0px 0px 10px -4px #000000; 
+    box-shadow: 0px 0px 10px -4px #000000;
+}
+.btn:hover{
+    cursor: pointer;
+}
+.btn span{
+    margin-right: 1em;
+    font-size: 1em;
+}
+:host-context(.dark) .button{
+    background-color: red;
+    color: aliceblue;
+}
+
+.country-layout{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+}
+.country-flag{
+    width: 40%;
+}
+.country-flag img{
+    width: 100%;
+}
+.country-detail{
+    width: 50%;
+}
+.country-detail span{
+    font-weight: bold;
+}
+.country-detail h2{
+    padding: 1em 0;
+}
+.country-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.border-countries{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 2em 0;
+    flex-wrap: wrap;
+}
+.border{
+    -webkit-box-shadow: 0px 0px 10px -4px #000000; 
+    box-shadow: 0px 0px 10px -4px #000000;
+    margin: .2em .3em;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5em;
+}
+:host-context(.dark) .border{
+    background-color: #2b3945;
+}
+:host-context(.dark) .btn{
+    background-color: #2b3945;
+    color: #fff;
+    border-radius: .3em;
+}
