@@ -10,15 +10,29 @@ import { CountriesService } from 'src/app/services/countries.service';
 })
 export class CountriesComponent implements OnInit {
 
-  arrCountries$: Observable<Country[]>;
+  searchFilter: string;
+  source: Country[];
 
   constructor(private countrieService: CountriesService) {
     
    }
 
   ngOnInit(): void {
-    this.arrCountries$ = this.countrieService.getAllCountries();
-    
+    this.countrieService.getAllCountries().subscribe(countries=>{
+      this.source = countries;
+    })
+  }
+
+  get countries(){
+    return this.source
+      ? this.source.filter((country) =>
+        this.searchFilter 
+          ? country.name
+            .toLowerCase()
+            .includes(this.searchFilter.toLowerCase()) 
+          : country
+      )
+    : this.source
   }
 
 }

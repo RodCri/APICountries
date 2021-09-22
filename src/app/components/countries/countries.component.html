@@ -1,7 +1,7 @@
 <div class="container">
     <div class="filter">
         <div class="filter__search">
-            <input type="text" placeholder="&#xF002;  Search by Region">
+            <input type="text" placeholder="&#xF002;  Search by Region" [(ngModel)]="searchFilter">
         </div>
         <div class="filter__select">
             <select name="" id="">
@@ -15,7 +15,7 @@
         </div>
     </div>
     <div class="countries">
-        <app-country-card *ngFor="let country of arrCountries$ | async"
+        <app-country-card *ngFor="let country of countries"
             [country]="country">
         </app-country-card>
     </div>
