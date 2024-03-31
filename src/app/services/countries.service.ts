@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Country } from '../model/api';
 import { map } from 'rxjs/operators';
@@ -9,13 +9,17 @@ import { map } from 'rxjs/operators';
 export class CountriesService {
 
   URL: string;
+  YOUR_ACCESS_KEY: string;
 
   constructor(private http: HttpClient) {
-    this.URL = 'https://restcountries.eu/rest/v2';
+    this.URL = 'http://api.countrylayer.com/v2';
+    this.YOUR_ACCESS_KEY = '9f019cff7c54f8bb7b70801fb2ed4840';
    }
 
   getAllCountries(){
-    return this.http.get<Country[]>(`${this.URL}/all`);
+    let headers = new HttpHeaders();
+    headers = headers.set('YOUR_ACCESS_KEY', '9f019cff7c54f8bb7b70801fb2ed4840');
+    return this.http.get<Country[]>(`${this.URL}/all?access_key=${this.YOUR_ACCESS_KEY}`);
   }
 
   getCountryByName(name: string){

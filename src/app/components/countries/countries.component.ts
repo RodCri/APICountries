@@ -12,15 +12,16 @@ export class CountriesComponent implements OnInit {
 
   searchFilter: string;
   source: Country[];
+  countries$: Observable<Country[]>;
 
   constructor(private countrieService: CountriesService) {
     
    }
 
   ngOnInit(): void {
-    this.countrieService.getAllCountries().subscribe(countries=>{
+    this.countrieService.getAllCountries().subscribe((countries)=>{
       this.source = countries;
-    })
+    });
   }
 
   get countries(){
